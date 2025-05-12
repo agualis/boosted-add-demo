@@ -11,5 +11,4 @@ export function getTestRpcSetup() {
 
 export const mainnetTest = {
   ...mainnet,
-  ...getTestRpcSetup(),
 } as const satisfies Chain;

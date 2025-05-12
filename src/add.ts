@@ -68,7 +68,7 @@ export const buildCallDataParams: AddLiquidityBoostedBuildCallInput = {
   chainId: 1,
   protocolVersion: 3,
   userData: '0x',
-  to: '0xb21A277466e7dB6934556a1Ce12eb3F032815c8A',
+  to: '0xb21A277466e7dB6934556a1Ce12eb3F032815c8A', // Balancer CompositeLiquidityRouter
   slippage: Slippage.fromPercentage('0.5'),
   wethIsEth: false,
 } as unknown as AddLiquidityBoostedBuildCallInput;

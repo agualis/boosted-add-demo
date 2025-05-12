@@ -11,6 +11,7 @@ async function sleep(time: number) {
 // const beforePectraBlockNumber = 22426500n; // block number from 6 May 2025 (1 day before pectra launch)
 
 export async function setup() {
+  if (process.env.SKIP_GLOBAL_SETUP) return;
   const mainnetForkBlockNumber: bigint | undefined = process.env
     .FORK_BLOCK_NUMBER
     ? BigInt(process.env.FORK_BLOCK_NUMBER)

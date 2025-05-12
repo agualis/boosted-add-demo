@@ -1,8 +1,10 @@
 import { defaultTestUserAccount } from '../test/anvil/test-accounts';
-import { mainnetTestPublicClient } from '../test/anvil/test-client';
+import { TestPublicClient } from '../test/anvil/test-client';
 import { Permit2, PERMIT2_ADDRESS, Permit2Batch, types } from './permit2';
 
-export async function signPermit2Add(): Promise<Permit2> {
+export async function signPermit2Add(
+  client: TestPublicClient
+): Promise<Permit2> {
   const domain = {
     name: 'Permit2',
     chainId: 1,
@@ -25,7 +27,7 @@ export async function signPermit2Add(): Promise<Permit2> {
       115792089237316195423570985008687907853269984665640564039457584007913129639935n, // MAX_UINT256
   };
 
-  const signature = await mainnetTestPublicClient.signTypedData({
+  const signature = await client.signTypedData({
     account: defaultTestUserAccount,
     message: {
       details,

@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "vitest",
-    "test:beforePectra": "FORK_BLOCK_NUMBER=22426500 pnpm vitest"
+    "test:autoFork": "vitest run addBoosted.spec",
+    "test:autoFork:beforePectra": "FORK_BLOCK_NUMBER=22426500 pnpm vitest run addBoosted.spec",
+    "test": "SKIP_GLOBAL_SETUP=true vitest run addBoostedWith",
+    "test:cast": "SKIP_GLOBAL_SETUP=true vitest run cast"
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
