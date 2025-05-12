@@ -29,7 +29,6 @@ test('add GHO to balancer boosted pool [using external anvil fork running on 854
   const approvalReceipt = await approvePermit2ForUnlimitedGho(
     mainnetTestPublicClient
   );
-  console.log('HERE CO4');
 
   expect(approvalReceipt.status).toBe('success');
 

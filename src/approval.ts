@@ -9,7 +9,6 @@ const MAX_UINT256 =
   115792089237316195423570985008687907853269984665640564039457584007913129639935n;
 
 export async function approvePermit2ForUnlimitedGho(client: TestPublicClient) {
-  console.log('Approving Permit2 for unlimited GHO');
   const approvalTxHash = await client.writeContract({
     account: defaultTestUserAccount,
     abi: erc20Abi,
@@ -18,8 +17,6 @@ export async function approvePermit2ForUnlimitedGho(client: TestPublicClient) {
     args: [PERMIT2_ADDRESS, MAX_UINT256],
     chain: mainnet,
   });
-
-  console.log();
 
   const receipt = await client.waitForTransactionReceipt({
     hash: approvalTxHash,
